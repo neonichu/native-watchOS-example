@@ -25,3 +25,6 @@ target 'watchOSsample WatchKit App' do
 	pod 'Alamofire', :git => 'git@github.com:neonichu/Alamofire.git', :branch => 'watchos'
 end
 ```
+
+- Note that existing Pods will generally not declare support for the `:watchos` platform. See the `watchos`
+branch of Alamofire used above how to add it to your `.podspec`.
