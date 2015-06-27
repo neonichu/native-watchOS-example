@@ -2,11 +2,15 @@
 
 set -e
 
-pod deintegrate
-rm -rf $HOME/Library/Developer/Xcode/DerivedData/*
+rm -rf /Users/boris/Library/Developer/Xcode/DerivedData/*
 
-bundle install
-bundle exec pod install --no-repo-update
+bundle exec pod deintegrate
+bundle exec pod install
+
+#$HOME/Sources/Rainforest/CocoaPods/bin/pod deintegrate
+#$HOME/Sources/Rainforest/CocoaPods/bin/pod install --no-repo-update
+
+#exit 0
 
 xcodebuild -workspace watchOSsample.xcworkspace -scheme watchOSsample
 xcodebuild -workspace watchOSsample.xcworkspace -scheme 'watchOSsample WatchKit App'
