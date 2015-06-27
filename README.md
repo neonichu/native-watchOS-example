@@ -1,17 +1,11 @@
 # Integrating CocoaPods into native watchOS targets
 
-Xcode 7 added watchOS 2 as a new development platform. Released versions of CocoaPods
-do not support integrating into those types of targets, yet, but there's development
-branches you can use if you're adventurous.
+Xcode 7 added watchOS 2 as a new development platform. There is a beta version of CocoaPods, 0.38.0 beta 1, which supports it already.
 
-- Use a `Gemfile`, as described in this [CP guide](https://guides.cocoapods.org/using/a-gemfile.html). See this example:
+- Install the beta version:
 
-```ruby
-source 'https://rubygems.org'
-
-gem 'cocoapods', :git => 'https://github.com/CocoaPods/CocoaPods.git', :branch => 'watchapp2'
-gem 'cocoapods-core', :git => 'https://github.com/CocoaPods/Core.git', :branch => 'watchapp2'
-gem 'xcodeproj', :git => 'https://github.com/CocoaPods/Xcodeproj.git', :branch => 'watchapp2'
+```bash
+$ gem install cocoapods --pre
 ```
 
 - You have to manually specify `:watchos` as a platform in your `Podfile` right now, for example:
